@@ -1,0 +1,346 @@
+/* Светлая тема (ярче): белый + насыщенный синий, деликатный зелёный акцент */
+:root{
+  --bg:#ffffff;
+  --surface:#ffffff;
+  --surface-weak:#eef4ff;     /* светлее и заметнее */
+  --card:#ffffff;
+
+  --text:#0a1b3f;
+  --muted:#576683;
+
+  --brand:#0a56d1;            /* чуть насыщеннее */
+  --brand-2:#2563eb;          /* более яркий hover */
+  --accent-green:#16a34a;     /* зелёный для тонких акцентов */
+
+  --ring:#93c5fd;
+  --border:#e0e6f4;
+  --shadow:0 12px 28px rgba(10,27,63,.10);
+
+  /* дополнительные оттенки для фонов/полос */
+  --blue-tint-1:#e6f0ff;
+  --blue-tint-2:#d9e7ff;
+  --blue-tint-3:#cfe0ff;
+
+  /* высота фиксированного хедера */
+  --header-h: 100px;
+}
+
+@media (max-width:720px){
+  :root{ --header-h: 56px; }
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+  line-height:1.6;
+  color:var(--text);
+  background:var(--bg);
+  /* отступ, чтобы контент не уезжал под фиксированный хедер */
+  padding-top: var(--header-h);
+}
+
+/* Плавная прокрутка по якорям */
+html{ scroll-behavior:smooth; }
+/* Чтобы заголовки секций не прятались под фикс-хедером */
+.hero, .section{ scroll-margin-top: var(--header-h); }
+
+/* Утилиты */
+.container{width:min(1100px, 92%); margin-inline:auto}
+.muted{color:var(--muted)}
+.lead{font-size:1.125rem}
+.note{font-size:.95rem; color:var(--muted)}
+a{color:var(--brand); text-decoration:none}
+a:hover{color:var(--brand-2); text-decoration:underline}
+img{max-width:100%; height:auto; display:block; border-radius:1rem}
+
+/* Доступный скрытый текст для логотипа */
+.visually-hidden{
+  position:absolute !important; width:1px; height:1px; overflow:hidden;
+  clip:rect(1px,1px,1px,1px); white-space:nowrap; border:0; padding:0; margin:-1px;
+}
+
+/* Кнопки — чуть контрастнее */
+.btn{
+  display:inline-block; padding:.95rem 1.15rem; border-radius:1rem; font-weight:700;
+  letter-spacing:.01em;
+  border:1px solid transparent; box-shadow:var(--shadow); transition:transform .2s, background-color .2s, border-color .2s, color .2s;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--brand); color:#fff}
+.btn-primary:hover{background:var(--brand-2); color:#fff}
+.btn-primary:active{transform:translateY(0)}
+.btn-outline{background:linear-gradient(180deg,#ffffff, #f7faff); border-color:var(--blue-tint-3); color:var(--text)}
+.btn-outline:hover{border-color:var(--brand); background:#fff}
+.header-cta{margin-left:.75rem; white-space:nowrap}
+
+/* Skip link */
+.skip-link{position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden}
+.skip-link:focus{
+  left:1rem; top:1rem; width:auto; height:auto; padding:.5rem .75rem; background:var(--brand); color:#fff; z-index:1000; border-radius:.5rem;
+}
+
+/* Шапка — фиксированная, белая, с голубой полосой снизу */
+.site-header{
+  position: fixed;            /* было: sticky */
+  top:0; left:0; right:0;
+  z-index:999;
+  height: var(--header-h);
+  background:#ffffff;
+  border-bottom:2px solid var(--blue-tint-2);
+}
+.header-inner{
+  display:flex; align-items:center; gap:.75rem; justify-content:space-between;
+  height:100%;
+  padding: 0;                 /* вертикальные отступы берём высотой хедера */
+}
+
+/* Бренд-логотип вместо текста */
+.brand{
+  display:flex; align-items:center; gap:.5rem;
+  color:var(--text); text-decoration:none;
+  height:100%;
+}
+.brand-img{
+  display:block;
+  height: calc(var(--header-h) - 18px);  /* аккуратно вписываем в хедер */
+  width:auto; object-fit:contain;
+}
+.brand span{ display:none; }             /* старый текстовый бренд не показываем */
+.brand:hover{ opacity:.9; }
+
+/* Навигация */
+.site-nav ul{display:flex; gap:.4rem; list-style:none; margin:0; padding:0}
+.site-nav a{display:block; padding:.55rem .8rem; border-radius:.6rem}
+.site-nav a:hover{background:var(--blue-tint-1); text-decoration:none; color:#0a1b3f}
+
+/* Бургер */
+.nav-toggle{display:none; width:44px; height:44px; border:1px solid var(--border); background:transparent; border-radius:.6rem; position:relative}
+.nav-toggle-bar,
+.nav-toggle-bar::before,
+.nav-toggle-bar::after{content:""; position:absolute; left:10px; right:10px; height:2px; background:var(--text); transition:.2s}
+.nav-toggle-bar{top:21px}
+.nav-toggle-bar::before{top:-8px}
+.nav-toggle-bar::after{top:8px}
+
+/* Герой — фон-картинка + наши фирменные синие «волны» и лёгкий зелёный */
+.hero{
+  padding: clamp(3.2rem, 8vw, 7.5rem) 0;
+  background-image:
+    /* белая вуаль отключена; при желании увеличьте непрозрачность */
+    linear-gradient(0deg, rgba(255,255,255,0), rgba(255,255,255,0)),
+    radial-gradient(700px 320px at 12% 12%, rgba(10,86,209,.16), transparent 60%),
+    radial-gradient(680px 300px at 85% 18%, rgba(37,99,235,.18), transparent 60%),
+    /* зелёный слой очень слабый */
+    linear-gradient(180deg, transparent 60%, rgba(22,163,74,.06)),
+    url("./fon.png");
+  background-size: auto, auto, auto, auto, cover;
+  background-position: center, 12% 12%, 85% 18%, center, center;
+  background-repeat: no-repeat;
+  text-align:center;
+}
+
+/* Если есть поддержка color-mix — подменим только зелёный слой */
+@supports (color: color-mix(in oklab, white, black)) {
+  .hero{
+    background-image:
+      linear-gradient(0deg, rgba(255,255,255,.0), rgba(255,255,255,.0)),
+      radial-gradient(700px 320px at 12% 12%, rgba(10,86,209,.16), transparent 60%),
+      radial-gradient(680px 300px at 85% 18%, rgba(37,99,235,.18), transparent 60%),
+      linear-gradient(180deg, transparent 60%, color-mix(in oklab, var(--accent-green) 6%, transparent)),
+      url("./fon.png");
+  }
+}
+
+/* Чуть читаемее заголовок и подзаголовок на активном фоне */
+.hero h1,
+.hero .lead{
+  text-shadow: 0 2px 10px rgba(10,27,63,.22);
+}
+
+.hero h1{font-size:clamp(2rem, 4.8vw, 3rem); margin:.2rem 0}
+.hero .lead{opacity:.95}
+.hero-actions{display:flex; gap:.9rem; justify-content:center; flex-wrap:wrap; margin-top:1.1rem}
+
+/* Заголовки секций — подчёркивание градиентом */
+h2{
+  font-size:clamp(1.6rem, 3.2vw, 2.1rem); margin:0 0 1rem;
+  position:relative; display:inline-block; padding-bottom:.35rem;
+}
+h2::after{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:4px; border-radius:3px;
+  background:linear-gradient(90deg, var(--brand), var(--brand-2));
+  opacity:.9;
+}
+
+/* Секции */
+.section{padding: clamp(2.7rem, 6vw, 4.4rem) 0; background:var(--surface)}
+.section.alt{background:var(--surface-weak)}
+
+/* Карточки — более контрастная подсветка и тонкая зелёная полоска по желанию */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:1rem;
+  padding:1.05rem;
+  box-shadow:var(--shadow);
+}
+
+/* Подкрашиваем определённые блоки тонкими полосами сверху */
+#orgs .card,
+#funding .card{
+  border-top:4px solid color-mix(in oklab, var(--brand) 70%, #fff);
+}
+#funding .card{
+  border-top-color: color-mix(in oklab, var(--accent-green) 65%, #fff);
+}
+
+.card-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:1.1rem; padding:0; margin:1.1rem 0 0; list-style:none}
+
+/* Таймлайн — акценты времени и разделители */
+.timeline{display:grid; gap:.9rem; margin-top:1.1rem}
+.slot{
+  display:grid; grid-template-columns: 92px 1fr; gap:1rem; align-items:start;
+  background:linear-gradient(180deg,#ffffff, #fbfdff);
+  border:1px solid var(--blue-tint-3);  /* исправлена опечатка переменной */
+  border-radius:1rem; padding:1rem;
+}
+.slot time{
+  font-weight:800; color:var(--brand);
+}
+.slot h3{margin:.1rem 0}
+.slot p.muted{color:var(--muted)}
+
+/* Формы */
+input, select{
+  width:100%; padding:.85rem; border-radius:.6rem; border:1px solid var(--border);
+  background:#fff; color:var(--text);
+  outline:none;
+}
+input:focus, select:focus{
+  border-color:var(--ring);
+  box-shadow:0 0 0 4px color-mix(in oklab, var(--ring) 32%, transparent);
+}
+
+/* ====== ФУТЕР С ЛОГОТИПОМ И ПОЧТОЙ ====== */
+.site-footer{
+  border-top:2px solid var(--blue-tint-2);
+  background:linear-gradient(180deg, var(--blue-tint-1), var(--blue-tint-2));
+  padding:1rem 0 0;
+}
+.footer-inner{
+  display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+  padding:.3rem 0 1rem;
+}
+.footer-brand img{
+  display:block; height:60px; width:auto; object-fit:contain;
+}
+.footer-contact{ display:flex; align-items:center; gap:.6rem; flex-wrap:wrap }
+.footer-email{
+  font-weight:700; text-decoration:none;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.footer-email:hover{ text-decoration:underline; }
+
+.footer-bottom{
+  border-top:1px solid var(--blue-tint-2);
+  padding:.8rem 0; text-align:center;
+}
+
+/* Мобильная адаптация футера */
+@media (max-width:720px){
+  .footer-inner{ justify-content:center; text-align:center }
+  .footer-contact{ justify-content:center }
+}
+
+/* Адаптив + мобильное меню (поверх контента при фикс. хедере) */
+@media (max-width: 960px){
+  .card-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 720px){
+  .card-grid{grid-template-columns:1fr}
+  .slot{grid-template-columns:74px 1fr}
+  .site-nav{
+    position:absolute;
+    inset: calc(100% + 1px) 0 auto auto;
+    background:#fff;
+    border-bottom:2px solid var(--blue-tint-2);
+    display:none;
+    z-index:1000; /* поверх всего */
+  }
+  .site-nav.open{display:block}
+  .site-nav ul{flex-direction:column; padding:.6rem}
+  .nav-toggle{display:block}
+  .header-cta{display:none} /* в моб. меню кнопку регистрации покажем в герое */
+}
+
+/* Печать */
+@media print{
+  .nav-toggle, .site-nav, .hero-actions{display:none !important}
+  .card, .slot{box-shadow:none}
+}
+
+/* Акцент секции «Программа»: тонкий вертикальный градиент-бордер слева */
+#program{
+  position: relative;
+}
+#program::before{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;         /* тянется по высоте секции, у левого края */
+  width:6px;                /* толщина полосы */
+  border-radius:6px;
+  background:linear-gradient(180deg, var(--brand), var(--brand-2));
+  box-shadow:0 0 0 1px color-mix(in oklab, var(--brand) 20%, transparent),
+             0 6px 14px rgba(37,99,235,.18);
+}
+@media (max-width:720px){
+  #program::before{ width:4px; }
+}
+
+/* Вкладки дней */
+.day-tabs{
+  display:flex; gap:.5rem; flex-wrap:wrap; margin:.5rem 0 1rem;
+}
+.day-tab{
+  padding:.5rem .9rem; border:1px solid var(--blue-tint-3); background:#fff;
+  border-radius:.7rem; cursor:pointer; font-weight:600;
+}
+.day-tab:hover{ border-color:var(--brand); }
+.day-tab.is-active{
+  color:#fff; background:linear-gradient(90deg,var(--brand),var(--brand-2));
+  border-color:transparent;
+}
+/* Панели дней */
+.day-panel{ display:none; }
+.day-panel.is-active{ display:block; }
+.day-panel[hidden]{ display:none !important; }
+
+/* Стили ссылки на скачивание программы */
+.download-link{ font-weight:700; }
+.download-link:hover{ text-decoration:underline; }
+
+/* Плавное появление блоков */
+.reveal{ 
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .6s ease, transform .6s ease;
+  will-change: opacity, transform;
+}
+.reveal.in-view{
+  opacity: 1;
+  transform: none;
+}
+/* Небольшая ступенчатая задержка для списков (карточки/слоты таймлайна) */
+.card-grid > li.reveal:nth-child(1){ transition-delay: .05s }
+.card-grid > li.reveal:nth-child(2){ transition-delay: .10s }
+.card-grid > li.reveal:nth-child(3){ transition-delay: .15s }
+.timeline > .slot.reveal:nth-child(1){ transition-delay: .05s }
+.timeline > .slot.reveal:nth-child(2){ transition-delay: .10s }
+.timeline > .slot.reveal:nth-child(3){ transition-delay: .15s }
+/* Уважение настроек «уменьшить движение» */
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1; transform:none; transition:none }
+}
