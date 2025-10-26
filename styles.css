@@ -151,7 +151,9 @@ img{max-width:100%; height:auto; display:block; border-radius:1rem}
       linear-gradient(180deg, transparent 60%, color-mix(in oklab, var(--accent-green) 6%, transparent)),
       url("./fon.png");
   }
-}
+}.org-line{ font-size:1.05rem; margin:.2rem 0 .6rem }
+.support-note{ margin:0; color:var(--text) }
+.support-note a{ font-weight:600 }
 
 /* Чуть читаемее заголовок и подзаголовок на активном фоне */
 .hero h1,
@@ -300,6 +302,48 @@ input:focus, select:focus{
   #program::before{ width:4px; }
 }
 
+/* Плашка о часовом поясе в программе */
+.tz-note{
+  display:flex; align-items:center; gap:.55rem;
+  padding:.7rem .9rem;
+  margin:.6rem 0 1rem;
+  border-radius:.9rem;
+  background:linear-gradient(180deg,#f8fbff, #eef6ff);
+  border:1px solid var(--blue-tint-3);
+  box-shadow: var(--shadow);
+  font-weight:600;
+}
+.tz-note strong{ color:var(--brand); }
+.tz-ico{ font-size:1.1rem; line-height:1; }
+
+/* Плашка-подсказка для подключения */
+.join-note{
+  display:flex; align-items:center; gap:.9rem; flex-wrap:wrap;
+  margin:.3rem 0 1.1rem;
+}
+.join-text{ font-weight:600; }
+.join-link{
+  font-weight:800; text-decoration:none;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.join-link:hover{ text-decoration:underline; }
+.join-alt code{
+  background:#f7faff; border:1px solid var(--blue-tint-3);
+  padding:.12rem .4rem; border-radius:.4rem; font-family:ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+/* мобильная компактность */
+@media (max-width:720px){
+  .join-note{ gap:.5rem; }
+}
+
+
+/* Компактнее на мобильных */
+@media (max-width:720px){
+  .tz-note{ font-size:.95rem; padding:.6rem .75rem }
+}
+
+
 /* Вкладки дней */
 .day-tabs{
   display:flex; gap:.5rem; flex-wrap:wrap; margin:.5rem 0 1rem;
@@ -344,3 +388,70 @@ input:focus, select:focus{
 @media (prefers-reduced-motion: reduce){
   .reveal{ opacity:1; transform:none; transition:none }
 }
+
+#orgs.section{            /* «Организаторы» теперь обычный светлый фон */
+  background: var(--surface);
+}
+
+#funding.section{         /* «Организатор и поддержка» — голубой Alt-фон */
+  background: var(--surface-weak);
+}
+
+/* === Организаторы: аккуратная раскладка и типографика === */
+
+/* Базово одна колонка; на ≥721px — две колонки, третья карточка на всю ширину */
+#orgs .card-grid{ grid-template-columns: 1fr; }
+@media (min-width:721px){
+  #orgs .card-grid{
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;              /* одинаковая высота строк */
+  }
+  #orgs .card-grid > li:nth-child(3){
+    grid-column: 1 / -1;              /* список организаторов ниже на всю ширину */
+  }
+}
+
+/* Сброс неудачного flex у элементов списка */
+#orgs .card-grid > li{ display: block; }
+
+/* Карточка тянется на высоту ячейки и складывается вертикально */
+#orgs .card{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Заголовок карточки — явнее и сверху */
+#orgs .card h3{
+  margin: .1rem 0 .6rem;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  font-weight: 900;
+  color: var(--text);
+}
+
+/* Абзацы — ровно и без «двойных колонок» */
+#orgs .card p{ margin: 0; line-height: 1.6; }
+#orgs .card p + p{ margin-top: .55rem; }
+
+/* Для длинных ФИО/званий — аккуратные переносы */
+#orgs .card{ hyphens: auto; overflow-wrap: anywhere; }
+
+/* 3-я карточка в блоке #orgs: делим список людей на две колонки на ширине ≥900px */
+@media (min-width: 900px){
+  #orgs .card-grid > li:nth-child(3){
+    /* переопределяем наши ранние правила */
+    display: block;                 /* вместо flex у .card */
+    column-count: 2;                /* две колонки */
+    column-gap: 2rem;               /* расстояние между колонками */
+  }
+  #orgs .card-grid > li:nth-child(3) h3{
+    column-span: all;               /* заголовок поверх обеих колонок */
+    margin-bottom: .6rem;
+  }
+  #orgs .card-grid > li:nth-child(3) p{
+    break-inside: avoid;            /* не рвём абзацы между колонками */
+    margin-top: .55rem;
+  }
+}
+
