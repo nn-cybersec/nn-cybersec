@@ -397,61 +397,65 @@ input:focus, select:focus{
   background: var(--surface-weak);
 }
 
-/* === Организаторы: аккуратная раскладка и типографика === */
+/* Фон секции «Организаторы» */
+#orgs.section{ background: var(--surface); }
 
-/* Базово одна колонка; на ≥721px — две колонки, третья карточка на всю ширину */
-#orgs .card-grid{ grid-template-columns: 1fr; }
+/* Сетка карточек: мобильный — одна колонка; >=721px — две колонки */
+#orgs .card-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:1.1rem;
+  margin:1.1rem 0 0;
+  padding:0;
+  list-style:none;
+}
 @media (min-width:721px){
-  #orgs .card-grid{
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 1fr;              /* одинаковая высота строк */
-  }
-  #orgs .card-grid > li:nth-child(3){
-    grid-column: 1 / -1;              /* список организаторов ниже на всю ширину */
-  }
+  #orgs .card-grid{ grid-template-columns: 1fr 1fr; }
 }
 
-/* Сброс неудачного flex у элементов списка */
-#orgs .card-grid > li{ display: block; }
-
-/* Карточка тянется на высоту ячейки и складывается вертикально */
+/* Каждая карточка — блочный элемент (снимаем возможный flex) */
+#orgs .card-grid > li{ display:block; }
 #orgs .card{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  display:block;               /* переопределяем возможный flex */
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:1rem;
+  padding:1.05rem;
+  box-shadow:var(--shadow);
+  hyphens:auto; overflow-wrap:anywhere;
 }
 
-/* Заголовок карточки — явнее и сверху */
+/* Заголовок карточки и абзацы — аккуратная типографика */
 #orgs .card h3{
-  margin: .1rem 0 .6rem;
-  font-size: 1.15rem;
-  line-height: 1.3;
-  font-weight: 900;
-  color: var(--text);
+  margin:.1rem 0 .6rem;
+  font-size:1.15rem;
+  line-height:1.3;
+  font-weight:900;
+  color:var(--text);
+}
+#orgs .card p{ margin:0; line-height:1.6; }
+#orgs .card p + p{ margin-top:.55rem; }
+
+/* Третья карточка: на ≥721px растягиваем на всю ширину ниже первых двух */
+@media (min-width:721px){
+  #orgs .card-grid > li:nth-of-type(3){ grid-column: 1 / -1; }
 }
 
-/* Абзацы — ровно и без «двойных колонок» */
-#orgs .card p{ margin: 0; line-height: 1.6; }
-#orgs .card p + p{ margin-top: .55rem; }
-
-/* Для длинных ФИО/званий — аккуратные переносы */
-#orgs .card{ hyphens: auto; overflow-wrap: anywhere; }
-
-/* 3-я карточка в блоке #orgs: делим список людей на две колонки на ширине ≥900px */
-@media (min-width: 900px){
-  #orgs .card-grid > li:nth-child(3){
-    /* переопределяем наши ранние правила */
-    display: block;                 /* вместо flex у .card */
-    column-count: 2;                /* две колонки */
-    column-gap: 2rem;               /* расстояние между колонками */
+/* Внутри третьей карточки — две колонки контента на ≥900px */
+@media (min-width:900px){
+  #orgs .card-grid > li:nth-of-type(3) .card{
+    display:grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    column-gap:2rem;
+    row-gap:.1rem;
+    align-items:start;
   }
-  #orgs .card-grid > li:nth-child(3) h3{
-    column-span: all;               /* заголовок поверх обеих колонок */
-    margin-bottom: .6rem;
+  #orgs .card-grid > li:nth-of-type(3) h3{
+    grid-column: 1 / -1;       /* заголовок над обеими колонками */
+    margin-bottom:.6rem;
   }
-  #orgs .card-grid > li:nth-child(3) p{
-    break-inside: avoid;            /* не рвём абзацы между колонками */
-    margin-top: .55rem;
+  #orgs .card-grid > li:nth-of-type(3) p{
+    break-inside: avoid;       /* не рвём абзацы между колонками */
   }
 }
 
