@@ -459,3 +459,12 @@ input:focus, select:focus{
   }
 }
 
+/* Ссылка на презентацию под докладом */
+.ppt { margin-top:.4rem; }
+.ppt a{
+  font-weight:700; text-decoration:none;
+  background:linear-gradient(90deg,var(--brand),var(--brand-2));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.ppt a:hover{ text-decoration:underline; }
+.ppt .ico{ margin-right:.35rem; }
