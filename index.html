@@ -11,7 +11,6 @@
   <script defer src="script.js"></script>
   <link rel="preload" as="image" href="fon.png" />
   <link rel="preload" as="image" href="assets/logo-nn-cybersec.png" />
-
 </head>
 
 <body>
@@ -20,12 +19,15 @@
   <!-- ШАПКА САЙТА -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-        <a class="brand" href="#title" aria-label="AI & Cybersecurity School">
-            <img class="brand-img" src="logo.png" alt="NN Cybersec" width="160" height="40" />
-            <span class="visually-hidden">NN Cybersec</span>
-          </a>          
+      <a class="brand" href="#title" aria-label="AI & Cybersecurity School">
+        <img class="brand-img" src="logo.png" alt="NN Cybersec" width="160" height="40" />
+        <span class="visually-hidden">NN Cybersec</span>
+      </a>
 
-      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню">
+      <button class="nav-toggle"
+              aria-expanded="false"
+              aria-controls="site-nav"
+              aria-label="Открыть меню">
         <span class="nav-toggle-bar" aria-hidden="true"></span>
       </button>
 
@@ -40,22 +42,37 @@
 
       <div style="display:flex;align-items:center;gap:.5rem">
         <a class="btn btn-outline lang-switch" href="en.index.html">EN</a>
-        <a class="btn btn-primary header-cta" href="https://forms.yandex.ru/u/68f0f42584227c001685033b" target="_blank" rel="noopener">Регистрация</a>
+        <a class="btn btn-primary header-cta"
+           href="https://forms.yandex.ru/u/68f0f42584227c001685033b"
+           target="_blank"
+           rel="noopener">
+          Регистрация
+        </a>
       </div>
     </div>
   </header>
 
   <main id="main">
-    <!-- НАЗВАНИЕ + ДАТА (герой) -->
+
+    <!-- НАЗВАНИЕ + ДАТА -->
     <section id="title" class="hero" role="region" aria-label="Название и дата">
       <div class="container hero-inner">
         <h1>Международная школа молодых ученых</h1>
         <h1>«Искусственный интеллект и кибербезопасность»</h1>
-        <p class="lead">онлайн, 25-28 ноября 2025</p>
-        <!-- Кнопка №2: регистрация в герое -->
+
+        <p class="lead">онлайн, 20–23 октября 2026</p>
+
         <div class="hero-actions">
-          <a class="btn btn-primary" href="https://forms.yandex.ru/u/68f0f42584227c001685033b" target="_blank" rel="noopener">Зарегистрироваться</a>
-          <a class="btn btn-outline" href="#program">Смотреть программу</a>
+          <a class="btn btn-primary"
+             href="https://forms.yandex.ru/u/68f0f42584227c001685033b"
+             target="_blank"
+             rel="noopener">
+            Зарегистрироваться
+          </a>
+
+          <a class="btn btn-outline" href="#program">
+            Смотреть программу
+          </a>
         </div>
       </div>
     </section>
@@ -64,318 +81,640 @@
     <section id="about" class="section">
       <div class="container">
         <h2>О мероприятии</h2>
+
         <p>
-            Международная школа молодых учёных «Искусственный интеллект и кибербезопасность» пройдёт
-            <strong>25–28 ноября 2025 года</strong> в г. Ставрополе (Россия). Программа объединяет ключевые направления искуственный интеллект (ИИ) и информационная безопасность (ИБ):
-            эволюция нейросетевых архитектур, дипфейки и методы противодействия, безопасность ИИ и MLOps, гомоморфное шифрование,
-            криптоанализ симметричных и асимметричных алгоритмов, стеганография, вопросы ИБ в образовании, ИБ при цифровой трансформации,
-            обнаружение аномалий и анализ сетевого трафика с применением ИИ.
-          </p>
+          Международная школа молодых учёных
+          «Искусственный интеллект и кибербезопасность» пройдёт
+          <strong>20–23 октября 2026 года</strong> в онлайн-формате.
+
+          Программа объединяет ключевые направления искусственного интеллекта
+          и информационной безопасности: безопасность автономных систем
+          искусственного интеллекта, применение ИИ в промышленности,
+          автоматизированный поиск научных источников, компьютерное зрение,
+          анализ документов, защищённость моделей искусственного интеллекта,
+          безопасность мультиагентных систем, современные методы криптоанализа,
+          доверенный искусственный интеллект, безопасность киберфизических
+          систем, защита и оптимизация нейронных сетей, распределённые
+          вычислительные системы, аутентификация пользователей и надёжность
+          программных систем.
+        </p>
       </div>
     </section>
 
-      <!-- ОРГАНИЗАТОР И ПОДДЕРЖКА -->
-<section id="funding" class="section">
-  <div class="container">
-    <h2>Организатор</h2>
-    <div class="card">
-      <p class="org-line">
-        Организатор: <strong>ФГАОУ ВО «Северо-Кавказский федеральный университет»</strong>
-      </p>
-      <p class="support-note">
-        Мероприятие проводится при финансовой поддержке
-        <a href="https://rscf.ru/project/25-71-30007/" target="_blank" rel="noopener">
-          Российского научного фонда (проект №&nbsp;25-71-30007)
-        </a>
-      </p>
-    </div>
-  </div>
-</section>
+    <!-- ОРГАНИЗАТОР И ПОДДЕРЖКА -->
+    <section id="funding" class="section">
+      <div class="container">
+        <h2>Организатор</h2>
+
+        <div class="card">
+          <p class="org-line">
+            Организатор:
+            <strong>
+              ФГАОУ ВО «Северо-Кавказский федеральный университет»
+            </strong>
+          </p>
+
+          <p class="support-note">
+            Мероприятие проводится при финансовой поддержке
+
+            <a href="https://rscf.ru/project/25-71-30007/"
+               target="_blank"
+               rel="noopener">
+              Российского научного фонда
+              (проект №&nbsp;25-71-30007)
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!-- ОРГАНИЗАТОРЫ -->
     <section id="orgs" class="section alt">
       <div class="container">
         <h2>Организационный комитет</h2>
+
         <ul class="card-grid" role="list">
+
           <li class="card org">
             <h3>Председатель</h3>
-            <p class="muted"><strong>Бабенко М.Г.</strong> – д.ф.-м.н., заведующий кафедрой кафедры вычислительной математики и кибернетики факультета математики и компьютерных наук имени профессора Н.И. Червякова, СКФУ </p>
+
+            <p class="muted">
+              <strong>Бабенко М.Г.</strong> –
+              д.ф.-м.н., заведующий кафедрой вычислительной математики
+              и кибернетики факультета математики и компьютерных наук
+              имени профессора Н.И. Червякова, СКФУ
+            </p>
           </li>
+
           <li class="card org">
             <h3>Заместители председателя</h3>
-            <p class="muted"><strong>Лапина М.А.</strong> – к.ф.-м.н., доцент кафедры вычислительной математики и кибернетики факультета математики и компьютерных наук имени профессора Н.И. Червякова, СКФУ</p>
-            <p class="muted"><strong>Кучеров Н.Н.</strong> – к.т.н., доцент кафедры вычислительной математики и кибернетики факультета математики и компьютерных наук имени профессора Н.И. Червякова, СКФУ</p>
+
+            <p class="muted">
+              <strong>Лапина М.А.</strong> –
+              к.ф.-м.н., доцент кафедры вычислительной математики
+              и кибернетики факультета математики и компьютерных наук
+              имени профессора Н.И. Червякова, СКФУ
+            </p>
+
+            <p class="muted">
+              <strong>Кучеров Н.Н.</strong> –
+              к.т.н., доцент кафедры вычислительной математики
+              и кибернетики факультета математики и компьютерных наук
+              имени профессора Н.И. Червякова, СКФУ
+            </p>
           </li>
+
           <li class="card org">
             <h3>Члены организационного комитета</h3>
-            <p class="muted"><strong>Ширяев Е.М.</strong> – старший преподаватель кафедры вычислительной математики и кибернетики факультета математики и компьютерных наук имени профессора Н.И. Червякова, СКФУ</p>
-            <p class="muted"><strong>Безуглова Е.С.</strong> – младший научный сотрудник научно-исследовательской лаборатории биологической и медицинской информатики медико-биологического факультета, СКФУ</p>
-            <p class="muted"><strong>Анрусенко Ю.А.</strong> – старший преподаватель кафедры вычислительной математики и кибернетики факультета математики и компьютерных наук имени профессора Н.И. Червякова, СКФУ</p>
-            <p class="muted"><strong>Токмакова М.Е.</strong> – лаборант кафедры вычислительной математики и кибернетики факультета математики и компьютерных наук имени профессора Н.И. Червякова, СКФУ</p>
-            <p class="muted"><strong>Дюдюн Г.Д.</strong> – лаборант регионального научно-образовательного математического центра "Северо-Кавказский центр математических исследований", СКФУ</p>
-            <p class="muted"><strong>Гордеев С.М.</strong> – лаборант регионального научно-образовательного математического центра "Северо-Кавказский центр математических исследований", СКФУ</p>
-            <p class="muted"><strong>Соломянко А.А.</strong> – лаборант кафедры вычислительной математики и кибернетики факультета математики и компьютерных наук имени профессора Н.И. Червякова, СКФУ</p>
+
+            <p class="muted">
+              <strong>Ширяев Е.М.</strong> –
+              старший преподаватель кафедры вычислительной математики
+              и кибернетики факультета математики и компьютерных наук
+              имени профессора Н.И. Червякова, СКФУ
+            </p>
+
+            <p class="muted">
+              <strong>Безуглова Е.С.</strong> –
+              младший научный сотрудник научно-исследовательской лаборатории
+              биологической и медицинской информатики
+              медико-биологического факультета, СКФУ
+            </p>
+
+            <p class="muted">
+              <strong>Анрусенко Ю.А.</strong> –
+              старший преподаватель кафедры вычислительной математики
+              и кибернетики факультета математики и компьютерных наук
+              имени профессора Н.И. Червякова, СКФУ
+            </p>
+
+            <p class="muted">
+              <strong>Токмакова М.Е.</strong> –
+              лаборант кафедры вычислительной математики и кибернетики
+              факультета математики и компьютерных наук
+              имени профессора Н.И. Червякова, СКФУ
+            </p>
+
+            <p class="muted">
+              <strong>Дюдюн Г.Д.</strong> –
+              лаборант регионального научно-образовательного математического
+              центра «Северо-Кавказский центр математических исследований»,
+              СКФУ
+            </p>
+
+            <p class="muted">
+              <strong>Гордеев С.М.</strong> –
+              лаборант регионального научно-образовательного математического
+              центра «Северо-Кавказский центр математических исследований»,
+              СКФУ
+            </p>
+
+            <p class="muted">
+              <strong>Соломянко А.А.</strong> –
+              лаборант кафедры вычислительной математики и кибернетики
+              факультета математики и компьютерных наук
+              имени профессора Н.И. Червякова, СКФУ
+            </p>
           </li>
+
         </ul>
       </div>
     </section>
 
     <!-- ПРОГРАММА -->
-<section id="program" class="section alt">
-    <div class="container">
-      <h2>Программа</h2>
-      <div class="tz-note" role="note" aria-label="Завершение">
-        <span class="tz-ico" aria-hidden="true"> </span>
-       Наша школа уже завершилась, вы можете ознакомиться с <strong>презентациями наших экспертов</strong>
-      </div>
-      
-      <!-- Вкладки-дни -->
-      <div class="day-tabs" role="tablist" aria-label="Дни программы">
-        <button class="day-tab is-active" role="tab" aria-selected="true" aria-controls="day-25" id="tab-25" data-day="25">25 ноября</button>
-        <button class="day-tab" role="tab" aria-selected="false" aria-controls="day-26" id="tab-26" data-day="26">26 ноября</button>
-        <button class="day-tab" role="tab" aria-selected="false" aria-controls="day-27" id="tab-27" data-day="27">27 ноября</button>
-        <button class="day-tab" role="tab" aria-selected="false" aria-controls="day-28" id="tab-28" data-day="28">28 ноября</button>
-      </div>
-  
-      <!-- День 1 -->
-      <div class="day-panel is-active" role="tabpanel" id="day-25" aria-labelledby="tab-25">
-        <div class="timeline" role="list" aria-label="Расписание 25 ноября">
-          <div class="slot" role="listitem">
-            <time datetime="09:00">09:00</time>
-            <div>
-              <h3>Эволюция архитектур нейронных сетей от перцептрона к GPT</h3>
-              <p class="muted">Руденко Марина Анатольевна, к.т.н., руководитель Центра искусственного интеллекта и анализа больших данных, КФУ им. В.И. Вернадского</p>
+    <section id="program" class="section alt">
+      <div class="container">
+
+        <h2>Программа</h2>
+
+        <!-- ВКЛАДКИ ДНЕЙ -->
+        <div class="day-tabs"
+             role="tablist"
+             aria-label="Дни программы">
+
+          <button class="day-tab is-active"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="day-20"
+                  id="tab-20"
+                  data-day="20">
+            20 октября
+          </button>
+
+          <button class="day-tab"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="day-21"
+                  id="tab-21"
+                  data-day="21">
+            21 октября
+          </button>
+
+          <button class="day-tab"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="day-22"
+                  id="tab-22"
+                  data-day="22">
+            22 октября
+          </button>
+
+          <button class="day-tab"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="day-23"
+                  id="tab-23"
+                  data-day="23">
+            23 октября
+          </button>
+
+        </div>
+
+        <!-- 20 ОКТЯБРЯ -->
+        <div class="day-panel is-active"
+             role="tabpanel"
+             id="day-20"
+             aria-labelledby="tab-20">
+
+          <div class="timeline"
+               role="list"
+               aria-label="Расписание 20 октября">
+
+            <div class="slot" role="listitem">
+              <time datetime="10:00">10:00–10:30</time>
+
+              <div>
+                <h3>
+                  Открытие молодежной школы,
+                  приветственные слова организаторов
+                </h3>
+
+                <p class="muted">
+                  Бабенко Михаил Григорьевич, д.ф.-м.н.,
+                  профессор, заведующий кафедрой вычислительной
+                  математики и кибернетики факультета математики
+                  и компьютерных наук Северо-Кавказского
+                  федерального университета, Ставрополь
+                </p>
+              </div>
             </div>
-            <div class="ppt">
-              <span class="ico" aria-hidden="true">📑</span>
-              <a href="presentations/Rudenko Evolution of Neural Network Architectures from Perceptron to GPT.pdf" download>Скачать презентацию</a>
-          </div>
-          </div>
-          <div class="slot" role="listitem">
-            <time datetime="10:30">10:30</time>
-            <div>
-              <h3>Технологии дипфейков как угроза информационной безопасности</h3>
-              <p class="muted">Максимова Елена Александровна, д.т.н, заведующий кафедрой интеллектуальных систем информационной безопасности, МИРЭА - Российский технологический университет, Москва</p>
+
+            <div class="slot" role="listitem">
+              <time datetime="10:30">10:30–12:00</time>
+
+              <div>
+                <h3>
+                  Трансформация ландшафта угроз
+                  в эпоху автономных систем искусственного интеллекта
+                </h3>
+
+                <p class="muted">
+                  Козачок Александр Васильевич, д.т.н.,
+                  профессор, заведующий лабораторией
+                  Института системного программирования
+                  им. В.П. Иванникова Российской академии наук,
+                  Орел
+                </p>
+              </div>
             </div>
-            <div class="ppt">
-              <span class="ico" aria-hidden="true">📑</span>
-              <a href="presentations/Maksimova Deepfake technologies as a threat to information security.pptx" download>Скачать презентацию</a>
-          </div>
-          </div>
-          <div class="slot" role="listitem">
-            <time datetime="12:00">12:00</time>
-            <div>
-              <h3>Принципы и методы сквозной разработки систем искусственного интеллекта</h3>
-              <p class="muted">Руденко Марина Анатольевна, к.т.н., руководитель Центра искусственного интеллекта и анализа больших данных, Крымский федеральный университет им. В.И. Вернадского, Симферополь</p>
+
+            <div class="slot" role="listitem">
+              <time datetime="12:00">12:00–13:30</time>
+
+              <div>
+                <h3>
+                  О применении искусственного интеллекта
+                  в индустрии: управление телекоммуникационными
+                  сетями и разработка программного обеспечения:
+                  общие проблемы и разные пути решения
+                </h3>
+
+                <p class="muted">
+                  Кознов Дмитрий Владимирович, д.т.н.,
+                  профессор, профессор кафедры системного программирования
+                  Санкт-Петербургского государственного университета,
+                  Санкт-Петербург
+                </p>
+              </div>
             </div>
-            <div class="ppt">
-              <span class="ico" aria-hidden="true">📑</span>
-              <a href="presentations/Rudenko Principles and Methods of End to End Development of Artificial Intelligence Systems.pdf" download>Скачать презентацию</a>
-          </div>
-          </div>
-          <div class="slot" role="listitem">
-            <time datetime="14:00">14:00</time>
-            <div>
-              <h3>Математические основы современного полностью гомоморфного шифрования</h3>
-              <p class="muted">Дерябин Максим Анатольевич, к.т.н., научный сотрудник Центра исследования вычислительных систем Института передовых технологий Самсунг (SAIT), Сувон, Республика Корея</p>
+
+            <div class="slot" role="listitem">
+              <time datetime="13:30">13:30–14:30</time>
+
+              <div>
+                <h3>Перерыв на обед</h3>
+              </div>
             </div>
-          </div>
-          <div class="slot" role="listitem">
-            <time datetime="15:30">15:30</time>
-            <div>
-              <h3>Классификация схем гомоморфного шифрования и ключевые операции</h3>
-              <p class="muted">Дерябин Максим Анатольевич, к.т.н., научный сотрудник Центра исследования вычислительных систем Института передовых технологий Самсунг (SAIT), Сувон, Республика Корея</p>
+
+            <div class="slot" role="listitem">
+              <time datetime="14:30">14:30–16:00</time>
+
+              <div>
+                <h3>
+                  Полуавтоматизированный поиск научных источников
+                  в сфере информационной безопасности
+                  с применением искусственного интеллекта
+                </h3>
+
+                <p class="muted">
+                  Котилевец Игорь Денисович, доцент,
+                  старший преподаватель кафедры
+                  «Цифровые технологии обработки данных»
+                  Института кибербезопасности и цифровых технологий
+                  РТУ МИРЭА, Москва
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="slot" role="listitem">
-            <time datetime="17:00">17:00</time>
-            <div>
-              <h3>Безопасность систем искусственного интеллекта</h3>
-              <p class="muted">Ложников Павел Сергеевич, д.т.н проректор по научной и инновационной деятельности Омского государственного технического университета, Омск</p>
+
+            <div class="slot" role="listitem">
+              <time datetime="16:00">16:00–17:30</time>
+
+              <div>
+                <h3>
+                  Применение технологий компьютерного зрения
+                  в медицинских интеллектуальных системах
+                </h3>
+
+                <p class="muted">
+                  Руденко Андрей Владимирович, к.т.н.,
+                  старший преподаватель кафедры компьютерной инженерии
+                  и моделирования Физико-технического института
+                  КФУ им. В.И. Вернадского, Симферополь
+                </p>
+              </div>
             </div>
+
           </div>
         </div>
-      </div>
-  
-      <!-- День 2 -->
-      <div class="day-panel" role="tabpanel" id="day-26" aria-labelledby="tab-26" hidden>
-        <div class="timeline" role="list" aria-label="Расписание 26 ноября">
-          <div class="slot" role="listitem">
-            <time datetime="09:00">09:00</time>
-            <div>
-              <h3>Применение методов искусственного интеллекта для оценивания качества речи при проведении речевой реабилитации</h3>
-              <p class="muted">Костюченко Евгений Юрьевич, к.т.н., начальник 
-                Научно-инжинирингового центра «Интеллектуальные системы доверенного взаимодействия», Томский госуниверситет систем управления и радиоэлектроники, Томск </p>
+
+        <!-- 21 ОКТЯБРЯ -->
+        <div class="day-panel"
+             role="tabpanel"
+             id="day-21"
+             aria-labelledby="tab-21"
+             hidden>
+
+          <div class="timeline"
+               role="list"
+               aria-label="Расписание 21 октября">
+
+            <div class="slot" role="listitem">
+              <time datetime="09:00">09:00–10:30</time>
+
+              <div>
+                <h3>
+                  «Война с PDF»: почему анализ документов —
+                  это «ад данных» и как с этим бороться?
+                </h3>
+
+                <p class="muted">
+                  Михайлов Андрей Анатольевич, к.т.н.,
+                  заведующий молодежной лабораторией искусственного
+                  интеллекта, обработки и анализа данных,
+                  Институт динамики систем и теории управления
+                  имени В.М. Матросова СО РАН, Иркутск
+                </p>
+              </div>
             </div>
-            <div class="ppt">
-              <span class="ico" aria-hidden="true">📑</span>
-              <a href="presentations/Application of artificial intelligence methods to assess speech quality during speech rehabilitation.pdf" download>Скачать презентацию</a>
-          </div>
-          </div>
-          <div class="slot" role="listitem">
-            <time datetime="10:30">10:30</time>
-            <div>
-              <h3>ИИ как средство разработки дипфейков и защиты от них</h3>
-              <p class="muted">Максимова Елена Александровна, д.т.н, заведующий кафедрой интеллектуальных систем информационной безопасности, МИРЭА - Российский технологический университет, Москва</p>
+
+            <div class="slot" role="listitem">
+              <time datetime="10:30">10:30–12:00</time>
+
+              <div>
+                <h3>
+                  Уязвимость моделей искусственного интеллекта,
+                  методы проверки целостности данных и моделей
+                </h3>
+
+                <p class="muted">
+                  Руденко Марина Анатольевна, к.т.н.,
+                  руководитель Центра искусственного интеллекта
+                  и анализа больших данных,
+                  Крымский федеральный университет
+                  им. В.И. Вернадского, Симферополь
+                </p>
+              </div>
             </div>
-            <div class="ppt">
-              <span class="ico" aria-hidden="true">📑</span>
-              <a href="presentations/AI as a tool for developing and defending against deepfakes.pptx" download>Скачать презентацию</a>
-          </div>
-          </div>
-          <div class="slot" role="listitem">
-            <time datetime="12:30">12:30</time>
-            <div>
-              <h3>Cyber security challenges in Education <br>Проблемы кибербезопасности в образовании </h3>
-              <p class="muted">Prakasha G. S., Университет Христа, Бангалор, Индия <br>Пракаша Джи С., Университет Христа, Бангалор, Индия </p>
+
+            <div class="slot" role="listitem">
+              <time datetime="12:00">12:00–13:30</time>
+
+              <div>
+                <h3>
+                  Безопасность мультиагентных систем
+                </h3>
+
+                <p class="muted">
+                  Романчева Нина Ивановна, к.т.н.,
+                  декан факультета прикладной математики
+                  и вычислительной техники,
+                  Московский государственный технический университет
+                  гражданской авиации (МГТУГА), Москва
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="slot" role="listitem">
-            <time datetime="14:00">14:00</time>
-            <div>
-              <h3>Traditional AI vs Generative AI: A paradigm shift <br> Традиционный ИИ против генеративного ИИ: смена парадигмы</h3>
-              <p class="muted">Namita Mittal, Associate Professor Department of Computer Science and Engineering, MNIT, Jaipur, India <br> Намита Миттал, доцент кафедры компьютерных наук и инженерии, MNIT, Джайпур, Индия </p>
-            </div>
-          </div>
-          <div class="slot" role="listitem">
-            <time datetime="16:30">16:30</time>
-            <div>
-              <h3>Введение в криптоанализ. Криптоанализ симметричных алгоритмов шифрования</h3>
-              <p class="muted">Ищукова Евгения Александровна, к.т.н., доцент, Южный федеральный университет, Таганрог</p>
-            </div>
-            <div class="ppt">
-              <span class="ico" aria-hidden="true">📑</span>
-              <a href="presentations/Introduction to Cryptanalysis. Cryptanalysis of Symmetric Encryption Algorithms.pptx" download>Скачать презентацию</a>
-          </div>
-          </div>
-          <div class="slot" role="listitem">
-            <time datetime="18:00">18:00</time>
-            <div>
-              <h3>Роль искусственного интеллекта в междисциплинарных исследованиях на стыке наук и искусства</h3>
-              <p class="muted">Иванова Ирина Алексеевна, к.т.н, доцент, заведующий кафедрой “Цифровые технологии обработки данных”, МИРЭА - Российский технологический университет, Москва</p>
-            </div>
+
           </div>
         </div>
-      </div>
-  
-      <!-- День 3 -->
-      <div class="day-panel" role="tabpanel" id="day-27" aria-labelledby="tab-27" hidden>
-        <div class="timeline" role="list" aria-label="Расписание 27 ноября">
-          <div class="slot" role="listitem">
-            <time datetime="09:00">09:00</time>
-            <div>
-              <h3>Криптоанализ асимметричных алгоритмов шифрования</h3>
-              <p class="muted">Ищукова Евгения Александровна, к.т.н., доцент, Южный федеральный университет, Таганрог</p>
+
+        <!-- 22 ОКТЯБРЯ -->
+        <div class="day-panel"
+             role="tabpanel"
+             id="day-22"
+             aria-labelledby="tab-22"
+             hidden>
+
+          <div class="timeline"
+               role="list"
+               aria-label="Расписание 22 октября">
+
+            <div class="slot" role="listitem">
+              <time datetime="09:00">09:00–10:30</time>
+
+              <div>
+                <h3>Современные методы криптоанализа</h3>
+
+                <p class="muted">
+                  Ищукова Евгения Александровна, к.т.н.,
+                  доцент, доцент Института компьютерных технологий
+                  и информационной безопасности Южного федерального
+                  университета, Таганрог;
+                  доцент Майкопского государственного
+                  технологического университета, Майкоп
+                </p>
+              </div>
             </div>
-            <div class="ppt">
-              <span class="ico" aria-hidden="true">📑</span>
-              <a href="presentations/Cryptanalysis of asymmetric encryption algorithms.pptx" download>Скачать презентацию</a>
-          </div>
-          </div>
-          <div class="slot" role="listitem">
-            <time datetime="10:30">10:30</time>
-            <div>
-              <h3>Методология классификации угроз информационной безопасности</h3>
-              <p class="muted">Конев Антон Александрович, к.т.н., заместитель директора Института системной интеграции и безопасности Томский госуниверситет систем управления и радиоэлектроники, Томск </p>
+
+            <div class="slot" role="listitem">
+              <time datetime="10:30">10:30–12:00</time>
+
+              <div>
+                <h3>
+                  Доверенный искусственный интеллект:
+                  достижения и перспективы
+                </h3>
+
+                <p class="muted">
+                  Турдаков Денис Юрьевич, к.ф.-м.н.,
+                  заведующий Исследовательского центра
+                  доверенного искусственного интеллекта
+                  Института системного программирования РАН,
+                  Москва
+                </p>
+              </div>
             </div>
-            <div class="ppt">
-              <span class="ico" aria-hidden="true">📑</span>
-              <a href="presentations/Methodology for classifying information security threats.pdf" download>Скачать презентацию</a>
-          </div>
-          </div>
-          <div class="slot" role="listitem">
-          <time datetime="14:00">14:00</time>
-            <div>
-              <h3>ИБ-вызовы при цифровой трансформации и использовании ИИ в бизнес-процессах</h3>
-              <p class="muted">Золотарев Вячеслав Владимирович, к.т.н., заведующий кафедрой безопасности информационных технологий, Сибирский государственный университет науки и технологий имени академика М.Ф. Решетнева, Красноярск </p>
+
+            <div class="slot" role="listitem">
+              <time datetime="12:00">12:00–13:30</time>
+
+              <div>
+                <h3>
+                  Безопасность киберфизических систем
+                  с применением искусственного интеллекта
+                </h3>
+
+                <p class="muted">
+                  Басан Елена Сергеевна, к.т.н.,
+                  доцент, Южный федеральный университет,
+                  Таганрог
+                </p>
+              </div>
             </div>
-            <div class="ppt">
-              <span class="ico" aria-hidden="true">📑</span>
-              <a href="presentations/Security challenges in digital transformation and the use of AI in business processes.pptx" download>Скачать презентацию</a>
-          </div>
-          </div>
-          <div class="slot" role="listitem">
-          <time datetime="16:00">16:00</time>
-            <div>
-              <h3>Методы и подходы на основе ИИ для обнаружения аномалии данных</h3>
-              <p class="muted">Романчева Нина Ивановна, к.т.н., декан факультета прикладной математики и вычислительной техники, Московский государственный технический университет гражданской авиации (МГТУГА), Москва </p>
+
+            <div class="slot" role="listitem">
+              <time datetime="13:30">13:30–14:30</time>
+
+              <div>
+                <h3>Перерыв на обед</h3>
+              </div>
             </div>
+
+            <div class="slot" role="listitem">
+              <time datetime="14:30">14:30–16:00</time>
+
+              <div>
+                <h3>
+                  Оптимизация и защита моделей нейронных сетей
+                  для современных вычислительных устройств
+                </h3>
+
+                <p class="muted">
+                  Дерябин Максим Анатольевич, к.т.н.,
+                  научный сотрудник Центра исследования
+                  вычислительных систем Института передовых
+                  технологий Самсунг (SAIT),
+                  Республика Корея
+                </p>
+              </div>
+            </div>
+
+            <div class="slot" role="listitem">
+              <time datetime="16:00">16:00–17:30</time>
+
+              <div>
+                <h3>
+                  Разработка распределенных пакетов
+                  прикладных программ
+                </h3>
+
+                <p class="muted">
+                  Феоктистов Александр Геннадьевич, д.т.н.,
+                  главный научный сотрудник лаборатории
+                  комплексных информационных систем
+                  Института динамики систем и теории управления
+                  имени В.М. Матросова СО РАН, Иркутск
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
-      </div>
-  
-      <!-- День 4 -->
-      <div class="day-panel" role="tabpanel" id="day-28" aria-labelledby="tab-28" hidden>
-        <div class="timeline" role="list" aria-label="Расписание 28 ноября">
-          <div class="slot" role="listitem">
-            <time datetime="09:00">09:00</time>
-            <div>
-              <h3>Кибербезопасность: от теории к практике - сценарии атак на киберфизические системы</h3>
-              <p class="muted">Басан Елена Сергеевна, к.т.н., доцент, Южный федеральный университет, Таганрог</p>
+
+        <!-- 23 ОКТЯБРЯ -->
+        <div class="day-panel"
+             role="tabpanel"
+             id="day-23"
+             aria-labelledby="tab-23"
+             hidden>
+
+          <div class="timeline"
+               role="list"
+               aria-label="Расписание 23 октября">
+
+            <div class="slot" role="listitem">
+              <time datetime="09:00">09:00–10:30</time>
+
+              <div>
+                <h3>
+                  Продленная аутентификация пользователей
+                  и комплексирование методов в рамках неё
+                </h3>
+
+                <p class="muted">
+                  Костюченко Евгений Юрьевич, к.т.н.,
+                  доцент, начальник Научно-инжинирингового центра
+                  «Интеллектуальные системы доверенного взаимодействия»,
+                  Томский государственный университет систем
+                  управления и радиоэлектроники, Томск
+                </p>
+              </div>
             </div>
-            <div class="ppt">
-              <span class="ico" aria-hidden="true">📑</span>
-              <a href="presentations/Cybersecurity From Theory to Practice Attack Scenarios on Cyber Physical Systems.pptx" download>Скачать презентацию</a>
-          </div>
-          </div>
-          <div class="slot" role="listitem">
-            <time datetime="10:30">10:30</time>
-            <div>
-              <h3>Применение искусственного интеллекта при разработке средств защиты информации</h3>
-              <p class="muted">Басан Елена Сергеевна, к.т.н., доцент, Южный федеральный университет, Таганрог</p>
+
+            <div class="slot" role="listitem">
+              <time datetime="10:30">10:30–12:00</time>
+
+              <div>
+                <h3>
+                  Цифровой ковчег: безопасность культурного кода
+                  с использованием технологий искусственного интеллекта
+                </h3>
+
+                <p class="muted">
+                  Иванова Ирина Алексеевна, к.т.н.,
+                  доцент, заведующий кафедрой
+                  «Цифровые технологии обработки данных»,
+                  МИРЭА – Российский технологический университет,
+                  Москва
+                </p>
+              </div>
             </div>
-            <div class="ppt">
-              <span class="ico" aria-hidden="true">📑</span>
-              <a href="presentations/Application of artificial intelligence in the development of information security tools.pptx" download>Скачать презентацию</a>
-          </div>
-          </div>
-          <div class="slot" role="listitem">
-            <time datetime="12:00">12:00</time>
-            <div>
-              <h3>Применение ИИ к анализу сетевого трафика для решения задач ИБ</h3>
-              <p class="muted">Гетьман Александр Игоревич, к.ф.-м.н., старший научный сотрудник, Институт системного программирования им. В.П. Иванникова, Москва</p>
+
+            <div class="slot" role="listitem">
+              <time datetime="12:00">12:00–13:30</time>
+
+              <div>
+                <h3>
+                  Надежность и защищенность программных систем
+                  сегодня и завтра
+                </h3>
+
+                <p class="muted">
+                  Белеванцев Андрей Андреевич, д.ф.-м.н.,
+                  профессор, член-корреспондент РАН,
+                  профессор факультета компьютерных наук
+                  Института системного программирования
+                  им. В.П. Иванникова РАН (ИСП РАН),
+                  Москва
+                </p>
+              </div>
             </div>
-            <div class="ppt">
-              <span class="ico" aria-hidden="true">📑</span>
-              <a href="presentations/Applying AI to Network Traffic Analysis to Solve Information Security Problems.pdf" download>Скачать презентацию</a>
-          </div>
+
+            <div class="slot" role="listitem">
+              <time datetime="13:30">13:30</time>
+
+              <div>
+                <h3>
+                  Закрытие молодежной школы,
+                  подведение итогов
+                </h3>
+
+                <p class="muted">
+                  Бабенко Михаил Григорьевич, д.ф.-м.н.,
+                  профессор, заведующий кафедрой вычислительной
+                  математики и кибернетики факультета математики
+                  и компьютерных наук Северо-Кавказского
+                  федерального университета, Ставрополь
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
+
+        <p class="note">
+          Полная версия программы доступна для скачивания:
+
+          <a class="download-link"
+             href="program.pdf"
+             download>
+            Скачать программу (PDF)
+          </a>
+        </p>
+
       </div>
-  
-      <p class="note">
-        Полная версия программы доступна для скачивания:
-        <a class="download-link" href="program.pdf" download>
-          Скачать программу (PDF)
+    </section>
+
+  </main>
+
+  <!-- ПОДВАЛ -->
+  <footer class="site-footer" role="contentinfo">
+
+    <div class="container footer-inner">
+
+      <a class="footer-brand"
+         href="#title"
+         aria-label="NN Cybersec — на главную">
+        <img src="logo.png"
+             alt="NN Cybersec"
+             width="160"
+             height="40" />
+      </a>
+
+      <div class="footer-contact">
+        <span class="muted">Почта оргкомитета:</span>
+
+        <a class="footer-email"
+           href="mailto:nn-cybersec@mail.ru">
+          nn-cybersec@mail.ru
+        </a>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p>
+        &copy; <span id="year"></span>
+        Международная школа молодых учёных
+        «Искусственный интеллект и кибербезопасность»
+        <br>
+
+        <a href="privacy.html">
+          Политика обработки персональных данных
         </a>
       </p>
     </div>
-  </section>
-  
 
-  <!-- ПОДВАЛ -->
-<footer class="site-footer" role="contentinfo">
-  <div class="container footer-inner">
-    <a class="footer-brand" href="#title" aria-label="NN Cybersec — на главную">
-      <img src="logo.png" alt="NN Cybersec" width="160" height="40" />
-    </a>
-
-    <div class="footer-contact">
-      <span class="muted">Почта оргкомитета:</span>
-      <a class="footer-email" href="mailto:nn-cybersec@mail.ru">nn-cybersec@mail.ru</a>
-  </div>
-
-  <div class="container footer-bottom">
-  <p>
-    &copy; <span id="year"></span> Международная школа молодых учёных
-    «Искусственный интеллект и кибербезопасность»<br>
-    <a href="privacy.html">Политика обработки персональных данных</a>
-  </p>
-</div>
-</footer>
-
-      </nav>
-    </div>
   </footer>
+
 </body>
 </html>
